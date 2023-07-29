@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css" rel="stylesheet" />
+    <title>geometry area calculation</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <header>
+        <nav class=" m-2 px-20 py-2 navbar navbar-light bg-teal-700 rounded-lg justify-content-between">
+            <div>
+                <a class="navbar-brand font-semibold text-cyan-200 text-4xl">Interactive</a>
+                <h3 class="font-semibold text-gray-400 text-2xl">Geometry Genius</h3>
+            </div>
+            <button id="myButton" type="button" class=" btn border-double border-4 border-indigo-600 bg-gray-500 btn-info my-2 my-sm-0 font-semibold text-gray-200">Blog</button>
+          </nav>
+
+    </header>
+    <main>
+        <section class="container pb-2">
+          <div class="row col-md-12 col-sm-12 gap-15"> 
+            <div class="col-md-9 col-sm-12">
+            <div class="card-deck row col-md-12 col-sm-12 justify-content-between  ">
+                <div id="triangle-hover" class="card col-md-3 col-sm-12 text-center bg-gray-200 mx-2  my-2">
+                  <img class="card-img-top p-1 " src="images/triangle.png" alt="Card image cap">
+                  <div class="card-body">
+                    <h5 class="card-title text-3xl font-semibold ">Triangle</h5>
+                    <p class="card-text pb-2">Area (A) = 0.5 * b * h
+                    </p>
+                    <div class="">
+                        <div class="input-group mb-3">
+                            <input id="triangle-field-b" type="text" class="form-control " placeholder="b" >
+                            <div class="">
+                              <button class=" px-2 pt-1.5" type="button">cm</button>
+                            </div>
+                            <input id="triangle-field-h" type="text" class="form-control " placeholder="h" >
+                            <div class="">
+                              <button class="px-2 pt-1.5" type="button"> cm </button>
+                            </div>
+                          </div>
+                    </div>
+                    <button id="btn-triangle-calculate" class="bg-teal-700 text-white font-semibold text-3xl p-2 rounded-lg hover:bg-cyan-800" type="submit">Calculate</button>
+                  </div>
+                </div>
+                <div id="rectangle-hover" class="card col-md-3 col-sm-12 text-center bg-gray-200  hover:bg-white  mx-2 my-2">
+                  <img class="card-img-top p-1 " src="images/rectangle.png" alt="Card image cap">
+                  <div class="card-body">
+                    <h5 class="card-title text-3xl font-semibold ">Rectangle</h5>
+                    <p class="card-text pb-2">Area (A) = w * l
+                    </p>
+                    <div class="">
+                        <div class="input-group mb-3">
+                            <input id="rectangle-field-w" type="text" class="form-control " placeholder="w" >
+                            <div class="">
+                              <button class=" px-2 pt-1.5" type="button">cm</button>
+                            </div>
+                            <input id="rectangle-field-l" type="text" class="form-control " placeholder="l" >
+                            <div class="">
+                              <button class="px-2 pt-1.5" type="button"> cm </button>
+                            </div>
+                          </div>
+                    </div>
+                    <button id="btn-rectangle-calculate" class="bg-teal-700 text-white font-semibold text-3xl p-2 rounded-lg hover:bg-cyan-800" type="submit">Calculate</button>
+                  </div>
+                </div>
+                <div id="parallelogram-hover" class="card col-md-3 col-sm-12 text-center bg-gray-200  hover:bg-white  mx-2 my-2">
+                  <img class="card-img-top p-1 " src="images/parallelogram.png" alt="Card image cap">
+                  <div class="card-body">
+                    <h5 class="card-title text-3xl font-semibold ">Parallelogram</h5>
+                    <p class="card-text pb-2">Area (A) = b * h
+                    </p>
+                    <div class="">
+                        <div class="input-group mb-3">
+                            <input id="parallelogram-field-b" type="text" class="form-control " placeholder="b" >
+                            <div class="">
+                              <button class=" px-2 pt-1.5" type="button">cm</button>
+                            </div>
+                            <input id="parallelogram-field-h" type="text" class="form-control " placeholder="h" >
+                            <div class="">
+                              <button class="px-2 pt-1.5" type="button"> cm </button>
+                            </div>
+                          </div>
+                    </div>
+                    <button id="btn-parallelogram-calculate" class="bg-teal-700 text-white font-semibold text-3xl p-2 rounded-lg hover:bg-cyan-800" type="submit">Calculate</button>
+                  </div>
+                </div>
+               
+                
+                   <!-- </div> -->
+                   <!-- </section>
+                  <section class="container"> -->
+                   <!-- <div class="card-deck row col-md-12 justify-content-start gap-20  pb-4"> -->
+                <div id="rhombus-hover" class="card col-md-3 col-sm-12 text-center bg-gray-200  hover:bg-white  mx-2 my-2">
+                    <img class="card-img-top p-1 " src="images/rhombus.png" alt="Card image cap">
+                    <div class="card-body">
+                      <h5 class="card-title text-3xl font-semibold ">Rhombus</h5>
+                      <p class="card-text pb-2">Area (A) = 0.5 * d1 * d2
+                      </p>
+                      <div class="">
+                          <div class="input-group mb-3">
+                              <input id="rhombus-field-d1" type="text" class="form-control " placeholder="d1" >
+                              <div class="">
+                                <button class=" px-2 pt-1.5" type="button">cm</button>
+                              </div>
+                              <input id="rhombus-field-d2" type="text" class="form-control " placeholder="d2" >
+                              <div class="">
+                                <button class="px-2 pt-1.5" type="button"> cm </button>
+                              </div>
+                            </div>
+                      </div>
+                      <button id="btn-rhombus-calculate" class="bg-teal-700 text-white font-semibold text-3xl p-2 rounded-lg hover:bg-cyan-800" type="submit">Calculate</button>
+                    </div>
+                  </div>
+                  <div id="pentagon-hover" class="card col-md-3 col-sm-12 text-center bg-gray-200  hover:bg-white  mx-2 my-2">
+                    <img class="card-img-top p-1 " src="images/pentagon.png" alt="Card image cap" >
+                    <div class="card-body">
+                      <h5 class="card-title text-3xl font-semibold ">Pentagon</h5>
+                      <p class="card-text pb-2">Area (A) = 0.5 * p * b
+                      </p>
+                      <div class="">
+                          <div class="input-group mb-3">
+                              <input id="pentagon-field-p" type="text" class="form-control " placeholder="p" >
+                              <div class="">
+                                <button class=" px-2 pt-1.5" type="button">cm</button>
+                              </div>
+                              <input id="pentagon-field-b" type="text" class="form-control " placeholder="b" >
+                              <div class="">
+                                <button class="px-2 pt-1.5" type="button"> cm </button>
+                              </div>
+                            </div>
+                      </div>
+                      <button id="btn-pentagon-calculate" class="bg-teal-700 text-white font-semibold text-3xl p-2 rounded-lg hover:bg-cyan-800" type="submit">Calculate</button>
+                    </div>
+                  </div>
+                  <div id="ellipse-hover" class="card col-md-3 col-sm-12 text-center bg-gray-200  hover:bg-white mx-2 my-2">
+                    <img class="card-img-top p-1 " src="images/ellipse.png" alt="Card image cap">
+                    <div class="card-body">
+                      <h5 class="card-title text-3xl font-semibold ">Ellipse</h5>
+                      <p class="card-text pb-2">Area (A) = πab
+                      </p>
+                      <div class="">
+                          <div class="input-group mb-3">
+                              <input id="ellipse-field-a" type="text" class="form-control " placeholder="a" >
+                              <div class="">
+                                <button class=" px-2 pt-1.5" type="button">cm</button>
+                              </div>
+                              <input id="ellipse-field-b" type="text" class="form-control " placeholder="b" >
+                              <div class="">
+                                <button class="px-2 pt-1.5" type="button"> cm </button>
+                              </div>
+                            </div>
+                      </div>
+                      <button id="btn-ellipse-calculate" class="bg-teal-700 text-white font-semibold text-3xl p-2 rounded-lg hover:bg-cyan-800" type="submit">Calculate</button>
+                    </div>
+                  </div>
+              </div>
+              </div>
+                  <!-- <div class="card-deck row col-md-12 justify-content-start gap-20  pb-4"></div> -->
+
+              <div class="card col-md-3 col-sm-12 align-item-center text-center p-2 bg-gray-200  hover:bg-white my-2 ">
+                  
+                    <h5 class="card-title text-3xl font-semibold ">Area Calculation</h5>
+                    <hr><hr><hr>
+                    <hr>
+                    
+                    <p>Triangle : <span id="triangle-area">00</span>  <span id="m1">cm²</span> <button id="btn-convert1" class="bg-cyan-600 text-xl font-semibold rounded-lg p-1 my-2 hover:bg-cyan-800 " type="submit"><span id="convert-to-cm1">convert to m²</span></button></p>
+                    <hr>
+                    
+                    <p>Rectangle : <span id="rectangle-area">00</span>  <span id="m2">cm²</span> <button id="btn-convert2" class="  bg-cyan-600 text-xl font-semibold rounded-lg p-1 my-2 hover:bg-cyan-800 " type="submit"><span id="convert-to-cm2">convert to m²</span></button></p>
+                    <hr>
+                    
+                    <p>Parallelogram : <span id="parallelogram-area">00</span>  <span id="m3">cm²</span> <button id="btn-convert3" class="bg-cyan-600  text-xl font-semibold rounded-lg p-1 my-2 hover:bg-cyan-800 " type="submit"><span id="convert-to-cm3">convert to m²</span></button></p>
+                    <hr>
+                    
+                    
+                    <p>Rhombus : <span id="rhombus-area">00</span>  <span id="m4">cm²</span> <button id="btn-convert4" class=" bg-cyan-600 text-xl font-semibold rounded-lg p-1 my-2 hover:bg-cyan-800 " type="submit"><span id="convert-to-cm4">convert to m²</span></button></p>
+                    <hr>
+                    
+                    <p>Pentagon : <span id="pentagon-area">00</span>  <span id="m5">cm²</span> <button id="btn-convert5" class="bg-cyan-600 text-xl font-semibold rounded-lg p-1 my-2 hover:bg-cyan-800 " type="submit"><span id="convert-to-cm5">convert to m²</span></button></p>
+                    <hr>
+                    
+                    <p>Ellipse : <span id="ellipse-area">00</span>  <span id="m6">cm²</span> <button id="btn-convert6" class="bg-cyan-600 my-2 text-xl font-semibold rounded-lg p-1  hover:bg-cyan-800 " type="submit"><span id="convert-to-cm6">convert to m²</span></button></p>
+                    <hr><hr>
+                    
+                    
+                    
+                  
+                  
+                
+                
+              </div>
+          </div>
+        </section>
+
+
+
+
+    </main>
+    <script type="text/javascript">
+      document.getElementById("myButton").onclick = function () {
+          location.href = "http://127.0.0.1:5500/blog.html";
+      };
+  </script>
+    
+    <script src="js/common.js"></script>
+    <script src="js/convert.js"></script>
+    <script src="js/triangle.js"></script>
+    <script src="js/rectangle.js"></script>
+    <script src="js/parallelogram.js"></script>
+    <script src="js/rhombus.js"></script>
+    <script src="js/pentagon.js"></script>
+    <script src="js/ellipse.js"></script>
+    
+</body>
+</html>
